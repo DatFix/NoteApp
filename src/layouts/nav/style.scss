@@ -1,0 +1,91 @@
+.ant-menu-inline {
+    width: 250px;
+}
+
+.ant-menu-light.ant-menu-root.ant-menu-inline {
+    border-inline-end: none;
+}
+
+.ant-menu-light.ant-menu-root.ant-menu-vertical {
+    border-inline-end: none;
+}
+
+.ant-menu .ant-menu-item {
+    background-color: #1D9FFD;
+    padding: 1.5rem 0;
+    font-size: 1.1rem;
+    color: #ffffff;
+
+    svg {
+        font-size: 1.3rem;
+    }
+}
+
+.ant-menu-item:not(.ant-menu-item-selected) {
+    padding: 1.5rem 0;
+    background-color: #ffffff;
+    color: #444;
+}
+
+// Styles cho menu đã thu gọn
+.ant-menu-inline-collapsed {
+    width: 80px !important;
+    border: none;
+
+    .ant-menu-item {
+        padding: 1.5rem 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        // Ẩn text khi thu gọn
+        .ant-menu-title-content {
+            display: none !important;
+        }
+
+        // Căn giữa icon
+        .anticon {
+            font-size: 1.3rem !important;
+            margin: 0 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+
+        // Đảm bảo link không ảnh hưởng layout
+        a {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 100% !important;
+            height: 100% !important;
+        }
+    }
+
+    // Item được chọn
+    .ant-menu-item-selected {
+        background-color: #1D9FFD !important;
+        color: #ffffff !important;
+
+        .anticon {
+            color: #ffffff !important;
+        }
+    }
+
+    // Item không được chọn
+    .ant-menu-item:not(.ant-menu-item-selected) {
+        background-color: #ffffff !important;
+        color: #444 !important;
+
+        .anticon {
+            color: #444 !important;
+        }
+    }
+}
+
+// Override cho Ant Design's default styles
+.ant-menu-inline-collapsed>.ant-menu-item {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    text-align: center !important;
+}
