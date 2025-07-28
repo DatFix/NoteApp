@@ -3,13 +3,14 @@ import type { InputHTMLAttributes } from "react";
 
 type TypesInput = 'text' | 'password' | 'number';
 
-interface BaseTextInputProp
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type' | 'onChange' | 'value'> {
+export interface BaseTextInputProps
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type' | 'onChange' | 'value' | 'size'> {
   type?: TypesInput;
   label?: string;
   value?: string | number;
   onChange?: (input: string | number) => void;
   isError?: boolean;
+  size?: 'small' | 'middle' | 'large';
 }
 
 export default function BaseInput({
@@ -19,7 +20,7 @@ export default function BaseInput({
   onChange,
   isError,
   ...otherProps
-}: BaseTextInputProp) {
+}: BaseTextInputProps) {
   const defaultIdForInput = otherProps?.id || otherProps?.name;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -35,7 +36,7 @@ export default function BaseInput({
     id: defaultIdForInput,
     value,
     onChange: handleChange,
-    status: isError ? 'error' : '',
+    status: isError ? ('error' as const) : undefined,
     ...otherProps,
   };
 

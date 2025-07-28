@@ -16,6 +16,7 @@ import './style.scss'
 import { Link, useLocation } from "react-router-dom";
 import { NAV_ITEMS } from "../../constants/fields.constant";
 import { ROUTE_LINK } from "../../constants/routes.constant";
+import RadialMenu from "./RadialMenu";
 
 export default function MenuBarLayout() {
     const [collapsed, setCollapsed] = useState(false);
@@ -92,7 +93,7 @@ export default function MenuBarLayout() {
             </div>
 
             <div className="absolute bottom-0 left-0 md:hidden w-full p-2">
-                <Flex align="center" justify="center" gap=".1rem" className="w-full ">
+                {/* <Flex align="center" justify="center" gap=".1rem" className="w-full ">
                     {navItems.map((item, index) => (
                         <Link to={item.key} key={index} className={`w-1/4 px-3 py-1.5 ${selectedKeys === item.key ? 'bg-blue-600 text-white' : ''} rounded-full transition-all duration-200`}>
                             <div className={`flex items-center justify-center transition-all duration-200 ${selectedKeys === item.key ? 'gap-2' : 'gap-0'}`}>
@@ -105,7 +106,8 @@ export default function MenuBarLayout() {
                             </div>
                         </Link>
                     ))}
-                </Flex>
+                </Flex> */}
+                <RadialMenu />
             </div>
         </>
     );

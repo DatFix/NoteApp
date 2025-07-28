@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, type ButtonProps } from 'antd';
 
 export interface BaseButtonProps extends ButtonProps {
-    label: string;
+    label: React.ReactNode;
     icon?: React.ReactNode;
 }
 

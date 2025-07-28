@@ -1,0 +1,1 @@
+export * as NoteApi from './note.api'
